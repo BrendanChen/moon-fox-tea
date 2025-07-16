@@ -19,13 +19,15 @@
             <a class="nav-link active" aria-current="page" href="#">首頁</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">產品列表</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#" @click.prevent="logout">登出</a>
-          </li>
+          </li> -->
         </ul>
-        <span class="navbar-text"> Navbar text with an inline element </span>
+        <span class="navbar-text">
+          <a class="nav-link" href="#" @click.prevent="logout">登出</a>
+        </span>
       </div>
     </div>
   </nav>

@@ -1,5 +1,4 @@
 <template>
-  <!-- Modal -->
   <div
     class="modal fade"
     id="exampleModal"
@@ -232,6 +231,19 @@ export default {
     },
     hideModal() {
       this.modal.hide()
+    },
+    uploadFile() {
+      const uploadedFile = this.$refs.fileInput.files[0]
+      // console.dir(uploadedFile)
+      const formData = new FormData()
+      formData.append('file-to-upload', uploadedFile)
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/upload`
+      this.$http.post(url, formData).then((res) => {
+        console.log(res)
+        if (res.data.success) {
+          this.tempProduct.imageUrl = res.data.imageUrl
+        }
+      })
     },
   },
   mounted() {
