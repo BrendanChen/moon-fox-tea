@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">狐茶</a>
+      <a class="navbar-brand" href="#">雲嶼茶</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -15,19 +15,27 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">首頁</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">產品列表</a>
-          </li>
           <!-- <li class="nav-item">
-            <a class="nav-link" href="#" @click.prevent="logout">登出</a>
+            <a class="nav-link text-white" aria-current="page" href="#">首頁</a>
           </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="#">產品</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">訂單</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">優惠券</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" @click.prevent="logout">登出</a>
+          </li>
         </ul>
-        <span class="navbar-text">
-          <a class="nav-link" href="#" @click.prevent="logout">登出</a>
-        </span>
+        <!-- <span class="navbar-text">
+          <a class="nav-link text-white" href="#" @click.prevent="logout"
+            >登出</a
+          >
+        </span> -->
       </div>
     </div>
   </nav>
