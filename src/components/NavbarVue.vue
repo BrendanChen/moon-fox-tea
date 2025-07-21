@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">雲嶼茶</a>
+      <a class="navbar-brand" href="#">月狐茶</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -15,12 +15,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <!-- <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="#">首頁</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link" href="#">產品</a>
-          </li>
+          <router-link to="/dashboard/products" class="nav-link"
+            >產品</router-link
+          >
           <li class="nav-item">
             <a class="nav-link" href="#">訂單</a>
           </li>
