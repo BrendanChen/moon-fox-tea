@@ -1,20 +1,30 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView,
-  },
-  {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+    component: () => import('../views/AboutView.vue'),
+  },
+  {
+    path: '/',
+    component: () => import('../views/UserboardVue.vue'),
+    children: [
+      {
+        path: 'products',
+        component: () => import('../views/UserProducts.vue'),
+      },
+    ],
+  },
+  {
+    path: '/',
+    component: () => import('../views/UserboardVue.vue'),
+    children: [
+      {
+        path: 'shop',
+        component: () => import('../views/UserCartVue.vue'),
+      },
+    ],
   },
   {
     path: '/login',
@@ -27,20 +37,6 @@ const routes = [
       {
         path: 'products',
         component: () => import('../views/ProductsVue.vue'),
-      },
-    ],
-  },
-  {
-    path: '/user',
-    component: () => import('../views/UserboardVue.vue'),
-    children: [
-      {
-        path: 'cart',
-        component: () => import('../views/UserCartVue.vue'),
-      },
-      {
-        path: 'product/:productId',
-        component: () => import('../views/UserProductVue.vue'),
       },
     ],
   },

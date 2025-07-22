@@ -1,0 +1,63 @@
+// index banner
+.index-banner {
+  width: 100%;
+  height: 500px;
+  background-image: url('@/assets/images/banner-image.jpg'); // ✅ 改這裡
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-banner-content {
+  padding: 20px;
+
+  h1 {
+    text-align: center;
+  }
+
+  .mBtn {
+    background-color: #ffffff;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    padding: 14px 60px;
+    font-size: 16px;
+
+    &:hover {
+      background-color: #87a9bc;
+      color: #ffffff;
+      border: none;
+    }
+  }
+}
+
+.index-banner-text {
+  margin: 100px;
+
+  .index-banner-text-title {
+    text-align: center;
+
+    h2 {
+      font-size: 28px;
+      font-family: 'Noto Serif TC', serif;
+    }
+
+    span {
+      font-family: 'Noto Sans TC', sans-serif;
+      color: #777;
+      font-size: 16px;
+    }
+  }
+}
+
+// 商品banner
+.products-banner {
+  width: 100%;
+  height: 320px;
+  margin: auto;
+}

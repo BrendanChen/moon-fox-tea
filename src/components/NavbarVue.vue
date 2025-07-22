@@ -28,11 +28,6 @@
             <a class="nav-link" href="#" @click.prevent="logout">登出</a>
           </li>
         </ul>
-        <!-- <span class="navbar-text">
-          <a class="nav-link text-white" href="#" @click.prevent="logout"
-            >登出</a
-          >
-        </span> -->
       </div>
     </div>
   </nav>

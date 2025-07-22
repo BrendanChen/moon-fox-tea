@@ -3,7 +3,8 @@
 @import './helpers/variables';
 @import '~bootstrap/scss/mixins';
 
-// Custom.scss
-// Option A: Include all of Bootstrap
+@import './layout/nav';
+@import './layout/banner';
+@import './pages/home';
 
 @import '~bootstrap/scss/bootstrap';

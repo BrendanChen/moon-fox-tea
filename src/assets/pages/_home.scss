@@ -1,0 +1,22 @@
+.product {
+  background-color: #ccc;
+  padding: 0 10px; /* 讓整區左右邊緣有距離 */
+}
+
+.product .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* 等同 margin: 10px 四面距離 */
+}
+
+.product .item {
+  width: calc((100% - 40px) / 3); /* 三欄 + 兩個 gap(20px*2) */
+  box-sizing: border-box; /* 確保 padding 不撐大寬度 */
+  padding: 0 10px; /* 讓內容左右不貼邊 */
+}
+
+.product .item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
