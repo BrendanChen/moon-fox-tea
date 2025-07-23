@@ -1,1 +1,1 @@
-<template>商品列表</template>
+<template>單一商品頁面</template>

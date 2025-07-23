@@ -51,6 +51,34 @@
   cursor: pointer;
 }
 
+/* 讓查看更多按鈕浮在圖片上方，並預設隱藏 */
+.product .img-box .view-more-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  padding: 6px 14px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 4px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  width: 315px;
+  height: 53px;
+}
+
+/* 滑鼠移到圖片上時顯示按鈕 */
+.product .img-box:hover .view-more-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .product .title {
   text-align: center;
   margin: 10px 0 4px;
@@ -60,7 +88,7 @@
 }
 
 .product .price {
-  // margin: 0 0 10px;
+  margin: 0 0 10px;
   // color: #888;
   font-size: 14px;
   text-align: center;

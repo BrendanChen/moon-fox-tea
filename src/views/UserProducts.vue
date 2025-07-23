@@ -16,7 +16,7 @@
           </div>
           <div class="content">
             <p class="title">{{ item.title }}</p>
-            <p class="price">$NT{{ $filters.currency(item.origin_price) }}</p>
+            <p class="price">NT$ {{ $filters.currency(item.origin_price) }}</p>
             <button>加入購物車</button>
           </div>
         </div>
