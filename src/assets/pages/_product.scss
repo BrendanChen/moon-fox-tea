@@ -1,6 +1,8 @@
+/* 商品列表設定 START */
 .product {
   background-color: #fff;
   padding: 0 20px;
+  margin-top: 20px;
 }
 
 .product .wrap {
@@ -94,16 +96,218 @@
   text-align: center;
 }
 
+// .product button {
+//   padding: 8px 16px;
+//   background-color: black;
+//   color: #ffffff;
+//   border: none;
+//   border-radius: 4px;
+//   cursor: pointer;
+// }
 .product button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
   padding: 8px 16px;
-  background-color: #333;
-  color: white;
+  background-color: black;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
+// 加入購物車disabled樣式
+.product button:disabled {
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .product button:hover {
   background-color: #555;
 }
+/* 商品列表設定 END */
+
+/* 商品列表種類 START */
+.catergoryTitleArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catergoryTitleArea title {
+  font-size: 57px;
+  color: #4e5c50;
+}
+
+.catergoryTitleArea .content {
+  font-size: 16px;
+  color: #5c6b73; // 柔和灰藍色
+  text-align: center;
+}
+
+.catergory {
+  width: 1100px;
+  height: 56px;
+  display: flex;
+  margin: auto;
+  background-color: #fff;
+}
+
+.catergory .item {
+  flex: 1;
+  text-align: center;
+  line-height: 56px;
+  border-bottom: 2px solid transparent; /* 保留空間 */
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 只有不是 spacer 的項目才有 hover 效果 */
+.catergory .item:not(.spacer):hover {
+  color: #333;
+  border-bottom: 2px solid #a8bfb0;
+  background-color: #f5f8f7; /* 淺灰綠背景，讓選項有點反應 */
+}
+
+/* active 狀態同樣排除 spacer */
+.catergory .item.active:not(.spacer) {
+  color: #2f4f4f;
+  font-weight: bold;
+  border-bottom: 2px solid #87a9bc;
+}
+
+/* 商品列表種類 END */
+
+/* 單一商品頁面 START */
+.single-product {
+  width: 1000px;
+  height: 500px;
+  margin: auto; // 置中
+  background-color: #ffffff;
+  display: flex;
+  align-items: stretch; /* 讓左右兩邊等高 */
+}
+
+.single-product .item {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  align-items: flex-start; /* 可改為 center 或 stretch */
+  justify-content: flex-start;
+  gap: 10px; /* 每個元素之間的間距 */
+  width: 500px;
+  margin: 30px 10px 10px 10px;
+  // background-color: #fcf6bd;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.single-product .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 或 contain 視需求 */
+}
+
+.single-product .item:first-child {
+  width: 500px;
+  height: auto;
+}
+
+// 單一商品價錢
+.single-product .item .product-origin_price {
+  color: #87a9bc;
+}
+
+// 單一商品加入購物車按鈕
+.addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 240px;
+  height: 56px;
+  font-size: 20px;
+  background-color: black;
+  color: #ffffff;
+}
+
+// 單一商品加入購物車disabled樣式
+.addBtn button:disabled {
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.addBtn:hover {
+  background-color: #87a9bc;
+}
+
+// 單一商品數量
+.quantity-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* 防止溢出 */
+  overflow: hidden;
+  height: 48px;
+  width: fit-content;
+}
+
+.quantity-wrap-item {
+  width: 48px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  user-select: none; /* 不讓使用者選取到元素(使用者體驗) */
+}
+
+/* input 區塊設寬一點 */
+.quantity-wrap-item input {
+  width: 48px;
+  height: 100%;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* + / - 文字樣式 */
+.quantity-wrap-item span {
+  font-size: 24px;
+  cursor: pointer;
+  display: block;
+}
+
+// 單一商品減號disabled
+.quantity-wrap-item.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+// 隱藏箭頭
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity-input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+// 點選+-動畫
+.quantity-wrap-item.flash {
+  background-color: #dcdcdc !important;
+  transition: background-color 0.1s ease;
+}
+/* 單一商品頁面 END */

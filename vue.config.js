@@ -1,3 +1,4 @@
 module.exports = {
-  productionSourceMap: false,
+  // 上線後記得要改成false
+  // productionSourceMap: true,
 }

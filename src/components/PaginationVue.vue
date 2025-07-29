@@ -1,5 +1,8 @@
 <template>
-  <nav aria-label="Page navigation example">
+  <nav
+    v-if="pages && pages.total_pages && pages.current_page > 0"
+    aria-label="Page navigation example"
+  >
     <ul class="pagination justify-content-center">
       <li class="page-item">
         <a

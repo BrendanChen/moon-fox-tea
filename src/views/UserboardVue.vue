@@ -31,10 +31,14 @@
             ><span>登入</span></router-link
           >
         </li>
-        <li>
-          <router-link class="navbar-brand" to="/shop"
-            ><span>購物車</span></router-link
-          >
+        <li class="cart-li">
+          <router-link to="/shop" class="cart-link">
+            <i class="bi bi-cart3 fs-3 text-white">
+              <span class="cart-badge" v-if="cartCount > 0">{{
+                cartCount
+              }}</span>
+            </i>
+          </router-link>
         </li>
       </ul>
     </div>
@@ -48,104 +52,54 @@
 </template>
 
 <script>
+import emitter from '@/methods/emitter'
+
 export default {
   data() {
     return {
       scrolled: false,
+      cartCount: 0,
     }
   },
   created() {},
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
+
+    // 初始化購物車數量（可以從 localStorage 或 API 拉資料）
+    this.getCartCount() // ✅ 新增：初始從 localStorage 讀購物車數量
+
+    // 監聽 mitt 事件
+    emitter.on('cartUpdated', this.updateCart) // ✅ 新增：mitt 監聽事件
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
+
+    // 移除 mitt 監聽
+    emitter.off('cartUpdated', this.updateCart) // ✅ 新增：移除 mitt 監聽
   },
   methods: {
     handleScroll() {
       this.scrolled = window.scrollY > 0 // 有往下捲就變 true
     },
+    getCartCount() {
+      // ✅ 新增：初始化購物車數量
+      const cart = JSON.parse(localStorage.getItem('cartItemIds')) || []
+      this.cartCount = cart.length
+      // console.log('cartCount', this.cartCount)
+    },
+    updateCart(productId) {
+      debugger
+      const cart = JSON.parse(localStorage.getItem('cartItemIds')) || []
+
+      // 若尚未加入，才新增
+      if (!cart.includes(productId)) {
+        cart.push(productId)
+        localStorage.setItem('cartItemIds', JSON.stringify(cart))
+      }
+
+      // 更新紅點數量
+      this.cartCount = cart.length
+    },
   },
 }
 </script>
-
-<!-- <style scoped lang="scss">
-.main-content {
-  padding-top: 80px; // 避開 fixed nav
-}
-
-.custom-nav {
-  height: 80px; // 固定高度防止蓋住白色分隔線
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  background-image: url('../assets/images/banner-image.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-blend-mode: darken;
-  display: flex;
-  align-items: center;
-}
-
-.nav-container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 0 40px;
-  position: relative; // ⭐ 讓 center 可以絕對置中
-}
-
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-.nav-left {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-right {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-  margin-left: auto; // ⭐ 靠右
-}
-
-.nav-left li,
-.nav-right li {
-  display: flex;
-  align-items: center;
-}
-
-.custom-nav h2,
-.custom-nav span {
-  color: white;
-}
-
-.divider {
-  height: 1px;
-  background-color: white;
-  width: 100%;
-}
-
-.custom-nav.scrolled {
-  background-color: #87a9bc;
-  background-image: none;
-}
-
-// 幫 h2 移除預設外距,無論左邊幾個選單、右邊幾個項目都固定置中
-.nav-center h2 {
-  margin: 0;
-}
-</style> -->

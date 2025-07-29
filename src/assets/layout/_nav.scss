@@ -77,3 +77,36 @@
   display: flex;
   align-items: center;
 }
+
+// 單一商品頁面nav設定
+body.product-page .custom-nav {
+  background-color: #87a9bc;
+  background-image: none;
+}
+
+// 購物車
+.cart-li {
+  list-style: none;
+  margin-left: 20px;
+
+  .cart-link {
+    text-decoration: none;
+
+    i {
+      position: relative;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -10px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 1;
+    }
+  }
+}

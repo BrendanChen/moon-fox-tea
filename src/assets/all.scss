@@ -3,8 +3,10 @@
 @import './helpers/variables';
 @import '~bootstrap/scss/mixins';
 
+@import './helpers/fonts'; // ✅ 加在這裡，代表全站字體設定
 @import './layout/nav';
 @import './layout/banner';
 @import './pages/product';
+@import './components/spinner';
 
 @import '~bootstrap/scss/bootstrap';
