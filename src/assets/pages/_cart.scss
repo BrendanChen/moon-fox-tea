@@ -1,0 +1,93 @@
+.cart-title {
+  width: 1140px;
+  height: 45px;
+  margin: 45px;
+}
+
+.cart-title h1 {
+  text-align: center;
+}
+
+.cart {
+  margin: auto;
+  width: 1140px;
+  height: 767px;
+  // border: 2px solid #000;
+}
+
+.cart .wrap {
+  display: flex;
+}
+
+.cart .cart-product {
+  margin-left: 24px;
+}
+
+.cart .product-sum-block {
+  position: sticky;
+  top: 100px; /* 往下滑到離視窗上緣 100px 才開始固定 */
+  align-self: flex-start; /* 防止容器高度影響 sticky 行為 */
+  right: 64px;
+}
+
+// absolute-bottom 是我們稍後要透過 JS 加上或移除的 class。
+.cart .product-sum-block.absolute-bottom {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+}
+
+.cart .item {
+  display: flex;
+  align-items: center; /* 這行讓子元素（img 和 h2）垂直置中 */
+  width: 730px;
+  height: 108px;
+  border: 1px solid black;
+  margin-bottom: 24px;
+}
+
+.cart .item img {
+  box-sizing: border-box;
+  margin: 16px 0 16px 16px; /* 保持四周空間 */
+  width: 100px;
+  height: 75px;
+}
+
+.cart .item h2 {
+  margin: 0 16px 0 32px;
+  font-size: 16px;
+  width: 134px;
+  height: 24px;
+  border: 1px solid green;
+}
+
+// 刪除垃圾桶按鈕
+.delBtn {
+  background-color: white;
+  border: 1px solid red;
+  width: 43px;
+  height: 43px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delBtn:hover {
+  background-color: red;
+}
+
+.delBtn:hover i {
+  color: white;
+}
+
+.delBtn i {
+  color: red;
+  transition: color 0.3s ease;
+}
+
+.cart-price {
+  width: 350px;
+  height: 300px;
+  border: 1px solid #000;
+}

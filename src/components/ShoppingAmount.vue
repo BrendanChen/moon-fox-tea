@@ -1,5 +1,4 @@
 <template>
-  商品數量
   <div class="quantity-wrap">
     <div
       class="quantity-wrap-item"
