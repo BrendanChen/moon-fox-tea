@@ -47,29 +47,9 @@ export default {
   },
   mounted() {
     document.body.classList.add('product-page')
-    window.addEventListener('scroll', this.handleScroll)
   },
   beforeUnmount() {
     document.body.classList.remove('product-page')
-    window.removeEventListener('scroll', this.handleScroll)
-  },
-  methods: {
-    handleScroll() {
-      const productSumBlock = document.querySelector('.product-sum-block')
-      const cartProduct = document.querySelector('.cart-product')
-
-      if (!productSumBlock || !cartProduct) return
-
-      const cartBottom = cartProduct.getBoundingClientRect().bottom
-      const windowHeight = window.innerHeight
-
-      // 當左邊的商品列表接近底部時，讓右邊的總計區塊固定住
-      if (cartBottom < windowHeight - 20) {
-        productSumBlock.classList.add('absolute-bottom')
-      } else {
-        productSumBlock.classList.remove('absolute-bottom')
-      }
-    },
   },
 }
 </script>

@@ -24,17 +24,8 @@
 }
 
 .cart .product-sum-block {
-  position: sticky;
-  top: 100px; /* 往下滑到離視窗上緣 100px 才開始固定 */
-  align-self: flex-start; /* 防止容器高度影響 sticky 行為 */
+  position: fixed;
   right: 64px;
-}
-
-// absolute-bottom 是我們稍後要透過 JS 加上或移除的 class。
-.cart .product-sum-block.absolute-bottom {
-  position: absolute;
-  top: auto;
-  bottom: 0;
 }
 
 .cart .item {
