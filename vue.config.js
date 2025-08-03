@@ -1,4 +1,3 @@
 module.exports = {
-  // 上線後記得要改成false
-  // productionSourceMap: true,
+  productionSourceMap: true, // 或者直接移除這行
 }

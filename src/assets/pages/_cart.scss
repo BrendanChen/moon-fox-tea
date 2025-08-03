@@ -1,84 +1,129 @@
-.cart-title {
-  width: 1140px;
-  height: 45px;
-  margin: 45px;
+:root {
+  --color-red: #ff0000;
+  --border-color: #000;
+  --main-width: 1140px;
 }
 
-.cart-title h1 {
+/* 外層容器 */
+.cart {
+  width: var(--main-width);
+  margin: auto;
+  min-height: 100vh;
+  padding-top: 80px; /* 避開 navbar */
+}
+
+.cart-title {
+  margin: 45px auto;
   text-align: center;
 }
 
-.cart {
-  margin: auto;
-  width: 1140px;
-  height: 767px;
-  // border: 2px solid #000;
+.cart-title h1 {
+  font-size: 24px;
+  margin: 0;
 }
 
-.cart .wrap {
+/* 主內容區：商品與結帳 */
+.cart-body {
+  position: relative;
   display: flex;
+  gap: 24px;
 }
 
-.cart .cart-product {
-  margin-left: 24px;
+/* 商品清單區 */
+.cart-product {
+  flex: 1;
 }
 
-.cart .product-sum-block {
-  position: fixed;
-  right: 64px;
-}
-
-.cart .item {
+/* 單一商品卡片 */
+.cart-item {
   display: flex;
-  align-items: center; /* 這行讓子元素（img 和 h2）垂直置中 */
-  width: 730px;
-  height: 108px;
-  border: 1px solid black;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border-color);
   margin-bottom: 24px;
 }
 
-.cart .item img {
-  box-sizing: border-box;
-  margin: 16px 0 16px 16px; /* 保持四周空間 */
+.cart-item img {
   width: 100px;
   height: 75px;
+  object-fit: cover;
 }
 
-.cart .item h2 {
-  margin: 0 16px 0 32px;
+.cart-item h2 {
+  margin: 0;
   font-size: 16px;
+  flex-shrink: 0;
   width: 134px;
-  height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   border: 1px solid green;
 }
 
-// 刪除垃圾桶按鈕
-.delBtn {
+/* 刪除按鈕 */
+.cart-delete-btn {
   background-color: white;
-  border: 1px solid red;
+  border: 1px solid var(--color-red);
   width: 43px;
   height: 43px;
-  transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
-.delBtn:hover {
-  background-color: red;
-}
-
-.delBtn:hover i {
-  color: white;
-}
-
-.delBtn i {
-  color: red;
+.cart-delete-btn i {
+  color: var(--color-red);
+  font-size: 24px;
   transition: color 0.3s ease;
 }
 
-.cart-price {
+.cart-delete-btn:hover {
+  background-color: var(--color-red);
+}
+
+.cart-delete-btn:hover i {
+  color: white;
+}
+
+/* 結帳區塊 */
+.cart-summary {
+  position: relative; /* 作為定位容器 */
   width: 350px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1px solid red;
+}
+
+.cart-price {
   height: 300px;
-  border: 1px solid #000;
+  background-color: #f2f79e;
+  border: 1px solid var(--border-color);
+  /* position 和 top 由 JS 控制 */
+  transition: top 0.2s ease-out;
+  z-index: 1001; /* 確保不被 navbar 蓋住 */
+}
+
+.footer {
+  width: 1110px;
+  height: 56px;
+  background-color: #ffffff;
+  // border: 1px solid #000000;
+  margin: 40px auto 0;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #000000;
+}
+
+.footer-body {
+  width: 1110px;
+  height: 284px;
+  border: 1px solid #000000;
+  margin: 40px auto 0;
 }
