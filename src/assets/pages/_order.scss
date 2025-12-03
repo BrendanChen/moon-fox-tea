@@ -1,0 +1,93 @@
+.order-wrap {
+  width: 960px;
+  margin: auto;
+  display: flex;
+}
+
+.order-wrap-item {
+  width: 300px;
+  margin: 30px 10px;
+  border: 1px solid #000;
+  padding: 10px 10px;
+  border-radius: 24px; /* 邊角圓弧 */
+  justify-content: center;
+  display: flex;
+}
+
+.step-on {
+  background-color: #fac9b8;
+}
+
+/* 表單容器 */
+/* 這一段就是把整個表單做成 一個卡片樣式，寬度限制在 800px
+（差不多像 Bootstrap 的 container + col-md-8）*/
+
+.order-form {
+  max-width: 800px; /* 相當於 col-md-8 */
+  margin: 0 auto; /* 水平置中 */
+  background: #fff; /* 白底 */
+  padding: 24px; /* 內距，讓內容不貼邊 */
+  border-radius: 12px; /* 圓角 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 陰影效果 */
+}
+
+/* 標題 */
+.form-title {
+  text-align: center; /* 文字置中 */
+  padding: 16px; /* 上下留白 */
+  margin-bottom: 20px; /* 與表單內容的間距 */
+  font-size: 1.5rem; /* 放大字體 */
+  font-weight: bold; /* 粗體 */
+}
+
+/* 行 (row) */
+.form-row {
+  // .form-row 相當於 Bootstrap 的 .row
+  display: flex; /* 用 flex 來橫向排列 */
+  gap: 20px; /* 欄位之間留間距 */
+  margin-bottom: 16px; /* 跟下一個區塊分開 */
+}
+
+/* 欄位 (col) */
+.form-col-6 {
+  // .form-col-6 相當於 Bootstrap 的 .col-md-6
+  // flex:1 表示「平均分配空間」，所以兩個 .form-col-6 會各佔 50%
+  flex: 1; /* 平均分配寬度，就像 col-md-6 */
+}
+
+/* 表單群組 */
+.form-group {
+  display: flex;
+  flex-direction: column; /* label 在上，input 在下 */
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  margin-bottom: 6px; /* label 與輸入框的距離 */
+  font-weight: 500; /* 半粗體 */
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px; /* 內距 */
+  border: 1px solid #ccc; /* 灰色邊框 */
+  border-radius: 6px; /* 圓角 */
+  font-size: 1rem; /* 適中字體大小 */
+}
+
+/* 按鈕 */
+.form-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  background: #fac9b8;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-btn:hover {
+  background: #f5a98c;
+}

@@ -108,6 +108,7 @@ export default {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`
       this.$http.get(api).then((res) => {
         if (res.data.success) {
+          // console.log('getAll', res.data.products)
           this.products = res.data.products
         }
       })
@@ -116,7 +117,7 @@ export default {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products?page=${page}`
       this.$http.get(api).then((res) => {
         if (res.data.success) {
-          console.log(res.data)
+          // console.log(res.data)
           this.products = res.data.products.filter(
             (product) => product.category === this.currentCategory,
           )
@@ -128,7 +129,9 @@ export default {
       this.$router.push(`/product/${id}`)
     },
     addCart(id) {
-      // ✅ 若此商品已經加入過購物車，就跳出提示
+      console.log('addCart', id)
+
+      // 若此商品已經加入過購物車，就跳出提示
       if (cartHelper.isInCart(id)) {
         alert('此商品已加入購物車')
         return

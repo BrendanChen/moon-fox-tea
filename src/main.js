@@ -9,6 +9,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 
 import { currency } from './methods/filters'
 import $httpMessageState from './methods/pushMessageState'
+import ValidatePlugin from './assets/plugins/validate' // ✅ 引入
 
 const app = createApp(App)
 app.config.globalProperties.$filters = {
@@ -19,5 +20,6 @@ app.config.globalProperties.$filters = {
 app.config.globalProperties.$httpMessageState = $httpMessageState
 app.use(VueAxios, axios)
 app.use(router)
+app.use(ValidatePlugin) // ✅ 掛載 VeeValidate
 app.component('LoadingComponent', Loading)
 app.mount('#app')

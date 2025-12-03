@@ -1,7 +1,7 @@
 :root {
   --color-red: #ff0000;
   --border-color: #000;
-  --main-width: 1140px;
+  --main-width: 436px;
 }
 
 /* 外層容器 */
@@ -9,11 +9,15 @@
   width: var(--main-width);
   margin: auto;
   min-height: 100vh;
-  padding-top: 80px; /* 避開 navbar */
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直置中 */
+  align-items: center; /* 水平置中 */
 }
 
 .cart-title {
-  margin: 45px auto;
+  margin-bottom: 24px; /* 與內容稍微間距 */
   text-align: center;
 }
 
@@ -22,16 +26,54 @@
   margin: 0;
 }
 
-/* 主內容區：商品與結帳 */
-.cart-body {
-  position: relative;
-  display: flex;
-  gap: 24px;
+/* 金額總計區域 */
+.cart-sum {
+  font-size: 24px;
 }
 
-/* 商品清單區 */
-.cart-product {
-  flex: 1;
+.cart-body .cart-sum {
+  display: flex;
+  justify-content: flex-end; /* 靠右對齊 */
+  align-items: center;
+  gap: 8px; /* 可選，加一點間距 */
+}
+
+.cart-coupon {
+  border: 1px solid red;
+  margin: 24px auto;
+  display: flex;
+  justify-content: flex-end; /* 靠右對齊 */
+}
+
+.cart-coupon input {
+  width: 100%;
+}
+
+.cart-coupon button {
+  width: 180px;
+  height: 100%;
+}
+
+// 建立訂單按鈕
+.cart-submit-btn {
+  background-color: black;
+  color: #ffffff;
+  margin: auto;
+  margin: 24px auto;
+  width: 920px;
+  height: 58px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center; /* 水平置中 */
+  align-items: center; /* 垂直置中 */
+  cursor: pointer;
+}
+
+.cart-submit-btn:hover {
+  background-color: #87a9bc;
 }
 
 /* 單一商品卡片 */
@@ -42,23 +84,26 @@
   padding: 16px;
   border: 1px solid var(--border-color);
   margin-bottom: 24px;
+  border-radius: 8px; /* 讓邊角有圓角 */
 }
 
 .cart-item img {
   width: 100px;
   height: 75px;
   object-fit: cover;
+  border-radius: 8px; /* 讓邊角有圓角 */
 }
 
 .cart-item h2 {
   margin: 0;
-  font-size: 16px;
+  font-size: 20px;
   flex-shrink: 0;
   width: 134px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border: 1px solid green;
+  font-weight: bold;
+  text-align: center;
 }
 
 /* 刪除按鈕 */
@@ -86,44 +131,4 @@
 
 .cart-delete-btn:hover i {
   color: white;
-}
-
-/* 結帳區塊 */
-.cart-summary {
-  position: relative; /* 作為定位容器 */
-  width: 350px;
-  flex-shrink: 0;
-  overflow: hidden;
-  border: 1px solid red;
-}
-
-.cart-price {
-  height: 300px;
-  background-color: #f2f79e;
-  border: 1px solid var(--border-color);
-  /* position 和 top 由 JS 控制 */
-  transition: top 0.2s ease-out;
-  z-index: 1001; /* 確保不被 navbar 蓋住 */
-}
-
-.footer {
-  width: 1110px;
-  height: 56px;
-  background-color: #ffffff;
-  // border: 1px solid #000000;
-  margin: 40px auto 0;
-  box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  color: #000000;
-}
-
-.footer-body {
-  width: 1110px;
-  height: 284px;
-  border: 1px solid #000000;
-  margin: 40px auto 0;
 }
