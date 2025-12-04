@@ -108,9 +108,11 @@ button:hover {
     <div class="card">
       <table>
         <thead>
-          <th>品名</th>
-          <th>數量</th>
-          <th class="text-end">單價</th>
+          <tr>
+            <th>品名</th>
+            <th>數量</th>
+            <th>單價</th>
+          </tr>
         </thead>
 
         <tbody>
