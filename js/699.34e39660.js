@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmoon_fox_tea"]=self["webpackChunkmoon_fox_tea"]||[]).push([[699],{1699:function(n,e,u){u.r(e),u.d(e,{default:function(){return c}});var r=u(641);function o(n,e,u,o,t,a){return(0,r.uX)(),(0,r.CE)("div",null,e[0]||(e[0]=[(0,r.Lk)("h1",null,"首頁測試",-1)]))}var t={name:"UserboardVue"},a=u(6262);const f=(0,a.A)(t,[["render",o]]);var c=f}}]);
+//# sourceMappingURL=699.34e39660.js.map
