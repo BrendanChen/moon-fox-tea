@@ -2,11 +2,6 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue'),
-  },
-  {
     path: '/',
     component: () => import('../views/UserboardVue.vue'),
     children: [
@@ -18,16 +13,7 @@ const routes = [
         path: 'product/:id',
         component: () => import('../views/UserProduct.vue'),
       },
-    ],
-  },
-  {
-    path: '/',
-    component: () => import('../views/UserboardVue.vue'),
-    children: [
-      {
-        path: 'shop',
-        component: () => import('../views/UserCartVue.vue'),
-      },
+      { path: 'shop', component: () => import('../views/UserCartVue.vue') },
       {
         path: 'checkout/:orderId',
         component: () => import('../views/UserCheckOut.vue'),
@@ -35,19 +21,19 @@ const routes = [
     ],
   },
   {
-    path: '/login',
-    component: () => import('../views/LoginVue.vue'),
+    path: '/about',
+    name: 'about',
+    component: () => import('../views/AboutView.vue'),
   },
+  { path: '/login', component: () => import('../views/LoginVue.vue') },
   {
     path: '/dashboard',
     component: () => import('../views/DashboardVue.vue'),
     children: [
-      {
-        path: 'products',
-        component: () => import('../views/ProductsVue.vue'),
-      },
+      { path: 'products', component: () => import('../views/ProductsVue.vue') },
     ],
   },
+  { path: '/:pathMatch(.*)*', redirect: '/' }, // catch-all
 ]
 
 const router = createRouter({
