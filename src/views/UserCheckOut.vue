@@ -132,7 +132,7 @@ button:hover {
       </table>
     </div>
 
-    <!-- AAA訂購人資訊 -->
+    <!-- BBB 訂購人資訊 -->
     <div class="card">
       <table>
         <tbody>
