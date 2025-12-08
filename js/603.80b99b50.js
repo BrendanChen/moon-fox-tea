@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkmoon_fox_tea"]=self["webpackChunkmoon_fox_tea"]||[]).push([[603],{603:function(n,t,u){u.r(t),u.d(t,{default:function(){return f}});var a=u(641);const e={class:"about"};function o(n,t){return(0,a.uX)(),(0,a.CE)("div",e,t[0]||(t[0]=[(0,a.Lk)("h1",null,"This is an about page",-1)]))}var r=u(6262);const s={},c=(0,r.A)(s,[["render",o]]);var f=c}}]);
+//# sourceMappingURL=603.80b99b50.js.map
